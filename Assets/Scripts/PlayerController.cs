@@ -9,9 +9,9 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
-    public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public float speed = 0;
 
      
     // Start is called once before the first execution of Update after the MonoBehaviour is created
