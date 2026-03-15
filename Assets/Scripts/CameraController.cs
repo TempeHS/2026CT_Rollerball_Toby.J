@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject player;
-    private Vector3 offset;
+    public Transform player;
+    public Transform orientation;
+    public float rotationSpeed = 5f;
+    public Vector3 cameraOffset = new Vector3(0, 2, -5);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        offset = transform.position - player.transform.position;
-    }
+
 
     // Update is called once per frame
+    }
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+        transform.position = player.position + orientation.TransformDirection(cameraOffset);
+        transform.LookAt(player.position);
     }
 }
